@@ -4,6 +4,8 @@ import { Container } from './container'
 import { Heading } from './heading'
 import { Subheading } from './subheading'
 import Image from 'next/image'
+import { cn } from '@/lib/utils'
+import { LandingImages } from './landing-images'
 
 export const Hero = () => {
     return (
@@ -39,14 +41,7 @@ export const Hero = () => {
                                 View Demo based on your use case &gt;
                             </Button >
                         </div>
-                        <div className="relative min-h-140 w-full">
-                            <Image src="/images/dashboard-new.png"
-                                alt="Hero Image"
-                                fill
-                                sizes="100vw"
-                                className="rounded-lg object-fill mask-r-from-50% mask-b-from-50%"
-                            />
-                        </div>
+                        <LandingImages />
                     </div>
                 </div>
 
@@ -55,7 +50,7 @@ export const Hero = () => {
 
 
 
-        </div >
+        </div>
 
 
     )
