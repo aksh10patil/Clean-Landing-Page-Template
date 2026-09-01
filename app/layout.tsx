@@ -28,10 +28,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${manrope.variable} ${inter.variable} h-full antialiased`}
     >
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-        <Navbar />
-        <body className="min-h-full flex flex-col bg-background text-foreground">{children}</body>
-      </ThemeProvider>
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Navbar />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

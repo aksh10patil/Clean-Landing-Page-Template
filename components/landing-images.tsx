@@ -8,7 +8,7 @@ import { motion } from 'motion/react'
 export const LandingImages = () => {
     return (
         <div>
-            <div className="relative min-h-140 w-full ">
+            <div className="relative min-h-72 sm:min-h-89 md:min-h-140 w-full mask-b-from-50% ">
 
                 {/* Back image */}
                 <motion.div
@@ -27,14 +27,14 @@ export const LandingImages = () => {
                         delay: 0.15,
                         ease: [0.22, 1, 0.36, 1],
                     }}
-                    className="perspective-[1800px] translate-x-20 translate-y-30"
+                    className="perspective-[1800px] justify-center translate-x-0 md:translate-x-20 translate-y-30"
                 >
                     <Image
                         src="/dashboard-new-2.png"
                         alt="Hero Image"
                         height={1080}
                         width={1920}
-                        className="absolute inset-0 object-contain rounded-2xl mask-r-from-1% mask-b-from-1%"
+                        className="absolute inset-0 justify-center object-contain rounded-2xl mask-r-from-1% mask-b-from-1%"
                         style={{
                             transform:
                                 'rotateX(48deg) rotateY(-10deg) rotateZ(-30deg)',
@@ -59,7 +59,7 @@ export const LandingImages = () => {
                         duration: 1.4,
                         ease: [0.22, 1, 0.36, 1],
                     }}
-                    className="perspective-[1800px] translate-x-20 translate-y-60"
+                    className="perspective-[1800px] translate-x-0 md:translate-x-20 translate-y-60"
                 >
                     <Image
                         src="/dashboard-new.png"

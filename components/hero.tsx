@@ -11,7 +11,7 @@ export const Hero = () => {
     return (
         <div>
             <Container>
-                <div className="flex items-center mx-auto max-w-7xl py-40">
+                <div className="flex items-center mx-auto max-w-7xl py-40 md:mx-auto">
                     <div >
                         <Heading asTag='h1' className="font-bold justify-left text-neutral-900 dark:text-neutral-100">
                             Agents That do the Work for You <br />
