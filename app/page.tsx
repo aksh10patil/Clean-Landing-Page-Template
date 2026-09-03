@@ -1,14 +1,18 @@
-import { Hero } from "@/components/hero";
-import { LogoCloud } from "@/components/logo-cloud";
-import ModeToggle from "@/components/mode-toggle";
+import { Features } from "@/components/features";
+import { FeaturesSecoundary } from "@/components/ui/features-secoundary";
+import { Hero } from "@/components/ui/hero";
+import { LogoCloud } from "@/components/ui/logo-cloud";
+import { Speed } from "@/components/ui/speed";
 
 
 export default function Home() {
   return (
     <div className="min-h-screen font-display">
-      <ModeToggle />
       <Hero />
       <LogoCloud />
+      <Features />
+      <Speed />
+      <FeaturesSecoundary />
 
 
 

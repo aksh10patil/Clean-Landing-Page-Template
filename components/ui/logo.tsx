@@ -4,9 +4,9 @@ import React from 'react';
 
 export const Logo = () => {
     return (
-        <Link href="/" className={cn('flex items-center gap-1 text-neutral-900 dark:text-white')}>
+        <Link href="/" className={cn('flex items-center gap-2 text-neutral-900 dark:text-neutral-100')}>
             <LogoIcon className="h-6 w-6" />
-            <span className="text-sm text-neutral-600 dark:text-white">Agenforce</span>
+            <span className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">Agenforce</span>
         </Link>
     );
 };

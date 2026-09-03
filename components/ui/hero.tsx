@@ -3,8 +3,6 @@ import { Button } from './button'
 import { Container } from './container'
 import { Heading } from './heading'
 import { Subheading } from './subheading'
-import Image from 'next/image'
-import { cn } from '@/lib/utils'
 import { LandingImages } from './landing-images'
 
 export const Hero = () => {
@@ -12,8 +10,8 @@ export const Hero = () => {
         <div>
             <Container>
                 <div className="flex items-center mx-auto max-w-7xl py-40 md:mx-auto">
-                    <div >
-                        <Heading asTag='h1' className="font-bold justify-left text-neutral-900 dark:text-neutral-100">
+                    <div className="w-full">
+                        <Heading asTag='h1' className=" justify-left text-neutral-900 dark:text-neutral-100">
                             Agents That do the Work for You <br />
                             Approvals that keep you in the Loop.
                         </Heading>
@@ -23,23 +21,21 @@ export const Hero = () => {
                             report back to you without the need for you to do the work.
                         </Subheading>
 
-                        <div className="flex gap-4">
+                        <div className="flex flex-wrap gap-4">
 
                             <Button
                                 href="/signup"
-                                className="px-4 text-sm text-white bg-neutral-800 text-md
-                        shadow-brand rounded-xl hover:bg-neutral-700 transition-colors"
+                                className="px-5 py-2.5 text-sm text-white bg-neutral-900 shadow-brand rounded-xl hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white transition-colors"
                             >
-                                Start a trail today
-                            </Button >
+                                Start a trial today
+                            </Button>
 
                             <Button
                                 href="/signup"
-                                className="px-4 text-sm border-2 border-black text-black bg-white text-md
-                         rounded-xl "
+                                className="px-5 py-2.5 text-sm border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 bg-white dark:bg-neutral-900 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
                             >
                                 View Demo based on your use case &gt;
-                            </Button >
+                            </Button>
                         </div>
                         <LandingImages />
                     </div>

@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Inter, Manrope, Geist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import { Navbar } from "@/components/navbar";
+import { Navbar } from "@/components/ui/navbar";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -26,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${manrope.variable} ${inter.variable} h-full antialiased`}
+      className={cn("h-full", "antialiased", manrope.variable, inter.variable, "font-sans", geist.variable)}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
