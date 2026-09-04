@@ -25,108 +25,43 @@ import { LogoIcon } from './logo'
 import { ArrowBigDownIcon } from 'lucide-react'
 import { SkeletonSecond } from '../features/skeletos/second'
 import { motion } from 'motion/react'
+import { First } from '../featuresThird/first'
+import Second from '../featuresThird/second'
 
-export const FeaturesSecoundary = () => {
+export const FeaturesThird = () => {
     return (
         <section className='py-10 md:py-20 lg:py-32 relative overflow-hidden'>
             <Container>
                 <div className='grid grid-cols-1 md:grid-cols-2 border-y border-neutral-200 dark:border-neutral-800 divide-x divide-neutral-200 dark:divide-neutral-800'>
-                    <div className='p-4'>
+                    <div className='pt-6 pl-6 pr-0 pb-0 md:pt-8 md:pl-8 relative overflow-hidden flex flex-col justify-between'>
+                        <div className='pr-6 md:pr-8'>
+                            <h2 className='text-lg font-bold text-neutral-900 dark:text-neutral-100'>
+                                Audit Trail
+                            </h2>
+                            <p className='text-neutral-600 dark:text-neutral-400 mt-2'>
+                                Design, launch and monitor your AI Agents with our Agent Studio. Our Agent Studio provides you with a visual interface to design your AI Agents.
+                            </p>
+                        </div>
 
-                        <h2 className='text-lg font-bold text-neutral-900 dark:text-neutral-100'>
-                            Agent Studio
-                        </h2>
-                        <p className='text-neutral-600 dark:text-neutral-400 mt-2'>
-                            Design, launch and monitor your AI Agents with our Agent Studio. Our Agent Studio provides you with a visual interface to design your AI Agents.
-                        </p>
-
-                        <CardSkeleton>
-                            <div className='relative w-full mx-auto p-4 rounded-3xl space-y-4'>
-                                <div className='absolute inset-0 bg-gradient-to-br from-neutral-100 to-white/80 dark:from-neutral-900/40 dark:to-neutral-950/80 blur-2xl -z-10 rounded-3xl'></div>
-                                <Card
-                                    title='Connect Data'
-                                    description='Link CRMs, helpdesks, and APIs to give agents secure, role-based access.'
-                                    items={[
-                                        { name: 'Airtable', icon: <IconBrandAirtable className='size-4 text-emerald-500' /> },
-                                        { name: 'Notion', icon: <IconBrandNotion className='size-4 text-neutral-700 dark:text-neutral-200' /> },
-                                        { name: 'Slack', icon: <IconBrandSlack className='size-4 text-amber-500' /> },
-                                    ]}
-                                    icon={<IconCloudDataConnection className='size-5' stroke={2.2} />}
-                                />
-                                <Card
-                                    title='Deploy Agents'
-                                    description='Deploy agents to multiple channels and platforms with a single click.'
-                                    items={[
-                                        { name: 'WhatsApp', icon: <IconBrandWhatsapp className='size-4 text-emerald-500' /> },
-                                        { name: 'Facebook Messenger', icon: <IconBrandMessenger className='size-4 text-blue-500' /> },
-                                        { name: 'Telegram', icon: <IconBrandTelegram className='size-4 text-sky-500' /> },
-
-                                    ]}
-                                    icon={<IconBrandCloudflare className='size-5 text-white' stroke={2.2} />}
-                                    iconBgClassName='bg-red-500 text-white'
-                                />
-                            </div>
+                        <CardSkeleton className='mt-6 flex-1 flex flex-col justify-end overflow-hidden'>
+                            <First />
                         </CardSkeleton>
-
                     </div>
-                    <div className='p-4 '>
-                        <h2 className='text-lg font-bold text-neutral-900 dark:text-neutral-100'>
-                            Multi-Tool Integration
-                        </h2>
-                        <p className='text-neutral-600 dark:text-neutral-400 mt-2'>
-                            Our AI Agents can integrate with multiple tools to provide you with a seamless experience and give real-time updates on the status of your workflows.
-                        </p>
-                        <CardSkeleton>
-                            <CardSkeletontwo />
-                        </CardSkeleton>
+                    <div className='p-6 md:p-8 relative overflow-hidden flex flex-col justify-between'>
+                        <div>
+                            <h2 className='text-lg font-bold text-neutral-900 dark:text-neutral-100'>
+                                Roles Based Access
+                            </h2>
+                            <p className='text-neutral-600 dark:text-neutral-400 mt-2'>
+                                Manage user roles and permissions to ensure that only authorized personnel can access and modify sensitive information.
+                            </p>
+                        </div>
 
+                        <CardSkeleton className='mt-6 flex-1 flex items-center justify-center overflow-hidden'>
+                            <Second />
+                        </CardSkeleton>
                     </div>
                 </div>
-
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-10 mt-10'>
-                    <div className='col-span-1'>
-                        <div className='flex items-center gap-3'>
-                            <IconJumpRope />
-                            <h2 className='text-lg font-bold text-neutral-900 dark:text-neutral-100'>
-                                Workflow Automation
-                            </h2>
-                        </div>
-                        <p className='text-neutral-600 dark:text-neutral-400 mt-6'>
-                            Orchestrate complex workflows seamlessly. Define custom logic, approvals, and escalation paths to automate business processes with precision.
-                        </p>
-                    </div>
-
-                    <div className='col-span-1'>
-                        <div className='flex items-center gap-3'>
-                            <IconArrowIteration />
-                            <h2 className='text-lg font-bold text-neutral-900 dark:text-neutral-100'>
-                                Integration Fabric
-                            </h2>
-                        </div>
-                        <p className='text-neutral-600 dark:text-neutral-400 mt-6'>
-                            Integrate with any system, service, or application. Our flexible architecture ensures smooth data flow and interoperability across your entire tech stack.
-                        </p>
-                    </div>
-
-                    <div className='col-span-1'>
-                        <div className='flex items-center gap-3'>
-                            <IconMoustache />
-                            <h2 className='text-lg font-bold text-neutral-900 dark:text-neutral-100'>
-                                Human-in-the-loop
-                            </h2>
-                        </div>
-                        <p className='text-neutral-600 dark:text-neutral-400 mt-6'>
-                            Design, launch and monitor your AI Agents with our Agent Studio. Our Agent Studio provides you with a visual interface to design your AI Agents.
-                        </p>
-                    </div>
-                </div>
-
-
-
-
-
-
-
 
             </Container>
         </section>
