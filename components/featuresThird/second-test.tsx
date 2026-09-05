@@ -2,6 +2,7 @@
 
 import React from "react"
 import Image from "next/image"
+import { motion } from "motion/react"
 import { cn } from "@/lib/utils"
 import { LogoIcon } from "@/components/ui/logo"
 
@@ -13,6 +14,9 @@ const avatars = [
     "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=600&auto=format&fit=crop",
 ]
+
+// Randomized appearance delays for organic staggered entrance (scaled 1.5x slower)
+const avatarDelays = [0.38, 0.78, 0.23, 0.68, 0.33, 0.57]
 
 const cardBase =
     "relative size-16 sm:size-20 md:size-22 rounded-2xl md:rounded-3xl "
@@ -47,30 +51,53 @@ const Item = ({
     className,
     src = avatars[0],
     alt = "Team Member",
+    delay = 0,
 }: {
     children?: React.ReactNode
     className?: string
     src?: string
     alt?: string
+    delay?: number
 }) => {
     return (
         <div
             className={cn(
                 cardBase,
-                "border border-dashed border-neutral-300 dark:border-neutral-700  flex items-center justify-center",
+                "border border-dashed border-neutral-300 dark:border-neutral-700 flex items-center justify-center relative overflow-hidden",
                 className
             )}
         >
-            <div className="flex items-center justify-center size-20 bg-gradient-to-br from-black via-transparent to-neutral-700 rounded-[12px] md:rounded-[13px] relative p-[1px] overflow-hidden shadow-sm">
-                <Image
-                    src={src}
-                    width={100}
-                    height={100}
-                    alt={alt}
-                    className="size-full object-cover aspect-square rounded-[12px] md:rounded-[13px]
-                    transition-transform duration-300 hover:scale-[1.05] shrink-0"
-                />
-            </div>
+            <div className={patternClasses} />
+            <motion.div
+                initial={{
+                    opacity: 0,
+                    scale: 0.7,
+                    filter: "blur(4px)",
+                }}
+                whileInView={{
+                    opacity: 1,
+                    scale: 1,
+                    filter: "blur(0px)",
+                }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                    duration: 0.75,
+                    delay,
+                    ease: [0.22, 1, 0.36, 1],
+                }}
+                className="relative z-10 flex items-center justify-center size-full p-1"
+            >
+                <div className="flex items-center justify-center size-full bg-linear-to-br from-black via-transparent to-neutral-700 rounded-[12px] md:rounded-[13px] relative p-[1px] overflow-hidden shadow-sm">
+                    <Image
+                        src={src}
+                        width={100}
+                        height={100}
+                        alt={alt}
+                        className="size-full object-cover aspect-square rounded-[12px] md:rounded-[13px]
+                        transition-transform duration-300 hover:scale-[1.05] shrink-0"
+                    />
+                </div>
+            </motion.div>
             {children}
         </div>
     )
@@ -92,7 +119,25 @@ export const SkeletonSecondTest = () => {
                     {/* Admin cursor & pill */}
                     <div className="relative">
                         <DashedCard opacity="opacity-80" />
-                        <div className="absolute top-10 -right-2 sm:-right-2 flex items-center gap-1.5 z-20 pointer-events-none">
+                        <motion.div
+                            initial={{
+                                opacity: 0,
+                                x: -50,
+                                y: 10,
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                x: 0,
+                                y: 0,
+                            }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{
+                                duration: 1.28,
+                                delay: 0.53,
+                                ease: [0.22, 1, 0.36, 1],
+                            }}
+                            className="absolute top-10 -right-2 sm:-right-2 flex items-center gap-1.5 z-20 pointer-events-none"
+                        >
                             <div className="px-2.5 py-1 rounded-full bg-indigo-600 dark:bg-indigo-500 text-white text-[11px] font-medium shadow-md shadow-indigo-500/20 ring-1 ring-white/20">
                                 Admin
                             </div>
@@ -102,11 +147,11 @@ export const SkeletonSecondTest = () => {
                             >
                                 <path d="M3 2l18 10.5-8.5 1.5 5 8-3 1.5-5-8-6.5 5.5z" />
                             </svg>
-                        </div>
+                        </motion.div>
                     </div>
 
-                    <Item src={avatars[0]} alt="Team Member 1" />
-                    <Item src={avatars[1]} alt="Team Member 2" />
+                    <Item src={avatars[0]} alt="Team Member 1" delay={avatarDelays[0]} />
+                    <Item src={avatars[1]} alt="Team Member 2" delay={avatarDelays[1]} />
 
                     <DashedCard opacity="opacity-80" />
                 </div>
@@ -115,21 +160,27 @@ export const SkeletonSecondTest = () => {
                 <div className="flex items-center justify-center gap-3 sm:gap-4">
                     <DashedCard opacity="opacity-40" />
 
-                    <Item src={avatars[2]} alt="Team Member 3" />
+                    <Item src={avatars[2]} alt="Team Member 3" delay={avatarDelays[2]} />
 
                     {/* Center Brand / Roles Logo with subtle gradient */}
                     <div
                         className={cn(
                             cardBase,
-                            "border border-dashed border-neutral-300 dark:border-neutral-700 p-1 flex items-center justify-center shadow-md"
+                            "border border-dashed border-neutral-300 dark:border-neutral-700 p-1 flex items-center justify-center shadow-md relative overflow-hidden"
                         )}
                     >
-                        <div className="flex items-center justify-center size-full bg-neutral-900 border border-neutral-700/60 rounded-[12px] md:rounded-[18px] text-white">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.85 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.68, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                            className="flex items-center justify-center size-full bg-neutral-900 border border-neutral-700/60 rounded-[12px] md:rounded-[18px] text-white"
+                        >
                             <LogoIcon className="size-8" />
-                        </div>
+                        </motion.div>
                     </div>
 
-                    <Item src={avatars[3]} alt="Team Member 4" />
+                    <Item src={avatars[3]} alt="Team Member 4" delay={avatarDelays[3]} />
 
                     <DashedCard opacity="opacity-40" />
                 </div>
@@ -138,12 +189,30 @@ export const SkeletonSecondTest = () => {
                 <div className="flex items-center justify-center gap-3 sm:gap-4 relative">
                     <DashedCard opacity="opacity-80" />
 
-                    <Item src={avatars[4]} alt="Team Member 5" />
+                    <Item src={avatars[4]} alt="Team Member 5" delay={avatarDelays[4]} />
 
                     {/* Content Reviewer target */}
                     <div className="relative">
-                        <Item src={avatars[5]} alt="Content Reviewer" />
-                        <div className="absolute -bottom-3 -right-6 sm:-right-8 flex items-center gap-1.5 z-20 pointer-events-none">
+                        <Item src={avatars[5]} alt="Content Reviewer" delay={avatarDelays[5]} />
+                        <motion.div
+                            initial={{
+                                opacity: 0,
+                                x: 50,
+                                y: -10,
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                x: 0,
+                                y: 0,
+                            }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{
+                                duration: 1.28,
+                                delay: 0.75,
+                                ease: [0.22, 1, 0.36, 1],
+                            }}
+                            className="absolute -bottom-3 -right-6 sm:-right-8 flex items-center gap-1.5 z-20 pointer-events-none"
+                        >
                             <svg
                                 className="size-3.5 text-emerald-600 dark:text-emerald-400 fill-current rotate-345 drop-shadow-sm"
                                 viewBox="0 0 24 24"
@@ -153,7 +222,7 @@ export const SkeletonSecondTest = () => {
                             <div className="px-2.5 py-1 rounded-full bg-emerald-600 dark:bg-emerald-500 text-white text-[11px] font-medium shadow-md shadow-emerald-500/20 ring-1 ring-white/20 whitespace-nowrap">
                                 Content Reviewer
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
 
                     <DashedCard opacity="opacity-80" />

@@ -58,8 +58,7 @@ export const FeaturesThird = () => {
                             </p>
                         </div>
 
-                        <CardSkeleton className=' flex-1 flex items-center justify-center overflow-hidden'>
-                            {/* <Second /> */}
+                        <CardSkeleton className=' flex-1 flex items-center justify-center mask-radial-from-1% overflow-hidden'>
                             <SkeletonSecondTest />
                         </CardSkeleton>
                     </div>

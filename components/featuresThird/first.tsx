@@ -145,7 +145,8 @@ export const First = () => {
             <div className="relative w-full rounded-tl-xl md:rounded-tl-2xl border-t border-l border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 overflow-hidden shadow-xs">
                 <div className="flex items-center px-5 py-3 gap-2 border-b border-neutral-100 dark:border-neutral-800">
                     <IconLogout className="size-5 text-neutral-700 dark:text-neutral-300" />
-                    <p className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Recent Activity</p>
+                    <p className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+                        Recent Activity</p>
                 </div>
 
                 <div className="divide-y divide-neutral-100/50 dark:divide-neutral-800 min-w-[500px] [-webkit-mask-image:linear-gradient(to_bottom,black_65%,transparent_100%)] [mask-image:linear-gradient(to_bottom,black_65%,transparent_100%)]">
