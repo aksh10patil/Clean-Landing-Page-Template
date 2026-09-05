@@ -26,15 +26,16 @@ import { ArrowBigDownIcon } from 'lucide-react'
 import { SkeletonSecond } from '../features/skeletos/second'
 import { motion } from 'motion/react'
 import { First } from '../featuresThird/first'
-import Second from '../featuresThird/second'
+import Second from '../featuresThird/second-demo'
+import { SkeletonSecondTest } from '../featuresThird/second-test'
 
 export const FeaturesThird = () => {
     return (
-        <section className='py-10 md:py-20 lg:py-32 relative overflow-hidden'>
+        <section className='py-5 md:py-10 lg:py-15 relative overflow-hidden'>
             <Container>
                 <div className='grid grid-cols-1 md:grid-cols-2 border-y border-neutral-200 dark:border-neutral-800 divide-x divide-neutral-200 dark:divide-neutral-800'>
-                    <div className='pt-6 pl-6 pr-0 pb-0 md:pt-8 md:pl-8 relative overflow-hidden flex flex-col justify-between'>
-                        <div className='pr-6 md:pr-8'>
+                    <div className='pt-3 pl-3 pr-0 pb-0 md:pt-8 md:pl-8 relative overflow-hidden flex flex-col justify-between'>
+                        <div className='pr-3 md:pr-8'>
                             <h2 className='text-lg font-bold text-neutral-900 dark:text-neutral-100'>
                                 Audit Trail
                             </h2>
@@ -43,11 +44,11 @@ export const FeaturesThird = () => {
                             </p>
                         </div>
 
-                        <CardSkeleton className='mt-6 flex-1 flex flex-col justify-end overflow-hidden'>
+                        <CardSkeleton className='mt-2 flex-1 flex flex-col justify-end overflow-hidden'>
                             <First />
                         </CardSkeleton>
                     </div>
-                    <div className='p-6 md:p-8 relative overflow-hidden flex flex-col justify-between'>
+                    <div className='p-3 md:p-8 relative overflow-hidden flex flex-col justify-between'>
                         <div>
                             <h2 className='text-lg font-bold text-neutral-900 dark:text-neutral-100'>
                                 Roles Based Access
@@ -57,8 +58,9 @@ export const FeaturesThird = () => {
                             </p>
                         </div>
 
-                        <CardSkeleton className='mt-6 flex-1 flex items-center justify-center overflow-hidden'>
-                            <Second />
+                        <CardSkeleton className=' flex-1 flex items-center justify-center overflow-hidden'>
+                            {/* <Second /> */}
+                            <SkeletonSecondTest />
                         </CardSkeleton>
                     </div>
                 </div>
