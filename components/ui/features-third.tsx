@@ -4,35 +4,25 @@ import { Container } from '@/components/ui/container'
 import { cn } from '@/lib/utils'
 import {
     IconArrowDown,
-    IconArrowIteration,
     IconBrandAdobe,
-    IconBrandAirtable,
-    IconBrandCloudflare,
     IconBrandGoogle,
-    IconBrandMessenger,
-    IconBrandNotion,
-    IconBrandSlack,
-    IconBrandTelegram,
     IconBrandTiktok,
-    IconBrandWhatsapp,
-    IconCloudDataConnection,
     IconFriends,
-    IconJumpRope,
-    IconMoustache,
+
 } from '@tabler/icons-react'
 import React from 'react'
 import { LogoIcon } from './logo'
-import { ArrowBigDownIcon } from 'lucide-react'
 import { SkeletonSecond } from '../features/skeletos/second'
 import { motion } from 'motion/react'
 import { First } from '../featuresThird/first'
-import Second from '../featuresThird/second-demo'
 import { SkeletonSecondTest } from '../featuresThird/second-test'
+import { Third } from '../featuresThird/third'
 
 export const FeaturesThird = () => {
     return (
         <section className='py-5 md:py-10 lg:py-15 relative overflow-hidden'>
             <Container>
+                {/* First layout  */}
                 <div className='grid grid-cols-1 md:grid-cols-2 border-y border-neutral-200 dark:border-neutral-800 divide-x divide-neutral-200 dark:divide-neutral-800'>
                     <div className='pt-3 pl-3 pr-0 pb-0 md:pt-8 md:pl-8 relative overflow-hidden flex flex-col justify-between'>
                         <div className='pr-3 md:pr-8'>
@@ -47,6 +37,7 @@ export const FeaturesThird = () => {
                         <CardSkeleton className='mt-2 flex-1 flex flex-col justify-end overflow-hidden'>
                             <First />
                         </CardSkeleton>
+
                     </div>
                     <div className='p-3 md:p-8 relative overflow-hidden flex flex-col justify-between'>
                         <div>
@@ -60,6 +51,40 @@ export const FeaturesThird = () => {
 
                         <CardSkeleton className=' flex-1 flex items-center justify-center mask-radial-from-1% overflow-hidden'>
                             <SkeletonSecondTest />
+                        </CardSkeleton>
+                    </div>
+                </div>
+
+                {/* Second layout  */}
+
+                <div className='grid grid-cols-1 md:grid-cols-2 border-y border-neutral-200 dark:border-neutral-800 divide-x divide-neutral-200 dark:divide-neutral-800'>
+                    <div className='pt-3 pl-3 pr-0 pb-0 md:pt-8 md:pl-8 relative overflow-hidden flex flex-col justify-between'>
+                        <div className='pr-3 md:pr-8'>
+                            <h2 className='text-lg font-bold text-neutral-900 dark:text-neutral-100'>
+                                Guardrail Engine
+                            </h2>
+                            <p className='text-neutral-600 dark:text-neutral-400 mt-2'>
+                                Leverage our AI Guardrails to detect and block harmful, biased, or off-brand content before it reaches your users.
+                            </p>
+                        </div>
+
+                        <CardSkeleton className='mt-2 flex-1 flex flex-col justify-end overflow-hidden'>
+
+                        </CardSkeleton>
+
+                    </div>
+                    <div className='pt-3 pr-3 pl-0 pb-0 md:pt-8 md:pr-8 relative overflow-hidden flex flex-col justify-between'>
+                        <div className='pl-3 md:pl-8'>
+                            <h2 className='text-lg font-bold text-neutral-900 dark:text-neutral-100'>
+                                Approval Queue
+                            </h2>
+                            <p className='text-neutral-600 dark:text-neutral-400 mt-2'>
+                                Review AI-generated content, requests, and actions in a single queue before they go live. Approve or reject with just a click.
+                            </p>
+                        </div>
+
+                        <CardSkeleton className='mt-2 flex-1 flex flex-col justify-end overflow-hidden'>
+                            <Third mirrored />
                         </CardSkeleton>
                     </div>
                 </div>
@@ -196,7 +221,6 @@ export const CardSkeletontwo = () => {
 export const Circle = ({
     className,
     children,
-    size,
     style,
 }: {
     className?: string;

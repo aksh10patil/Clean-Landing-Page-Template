@@ -22,7 +22,6 @@ import {
 } from '@tabler/icons-react'
 import React from 'react'
 import { LogoIcon } from './logo'
-import { ArrowBigDownIcon } from 'lucide-react'
 import { SkeletonSecond } from '../features/skeletos/second'
 import { motion } from 'motion/react'
 
@@ -260,7 +259,6 @@ export const CardSkeletontwo = () => {
 export const Circle = ({
     className,
     children,
-    size,
     style,
 }: {
     className?: string;

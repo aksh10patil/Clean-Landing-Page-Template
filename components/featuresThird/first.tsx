@@ -17,7 +17,6 @@ import {
     Timer,
     History,
     ClockCheck,
-    ClockAlert
 } from "lucide-react"
 
 type Variant = 'success' | 'failed' | 'processing' | 'pending'

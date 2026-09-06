@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { LogoIcon } from '@/components/ui/logo'
 
 export default function Second() {
@@ -19,7 +20,7 @@ export default function Second() {
         <div
             className={`${cardBase} overflow-hidden border border-neutral-200/80 dark:border-neutral-700/80 shadow-md bg-neutral-100 dark:bg-neutral-800`}
         >
-            <img src={src} alt={alt} className="size-full object-cover" />
+            <Image src={src} alt={alt} width={100} height={100} className="size-full object-cover" />
             <div className="absolute inset-0 rounded-2xl md:rounded-3xl ring-1 ring-inset ring-black/10 dark:ring-white/10 pointer-events-none" />
         </div>
     )
