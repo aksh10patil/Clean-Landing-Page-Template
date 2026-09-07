@@ -1,10 +1,10 @@
 import { Features } from "@/components/features";
+import Pricing from "@/components/pricing/pricing";
 import { FeaturesSecoundary } from "@/components/ui/features-secoundary";
 import { FeaturesThird } from "@/components/ui/features-third";
 import { Hero } from "@/components/ui/hero";
 import { LogoCloud } from "@/components/ui/logo-cloud";
 import { Speed } from "@/components/ui/speed";
-
 
 export default function Home() {
   return (
@@ -15,10 +15,7 @@ export default function Home() {
       <Speed />
       <FeaturesSecoundary />
       <FeaturesThird />
-
-
-
-
+      <Pricing />
     </div>
   );
 }
