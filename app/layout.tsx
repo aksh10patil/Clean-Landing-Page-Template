@@ -20,9 +20,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Clean Minimal Template",
+  title: "Agenforce - Autonomous AI Agents for Modern Teams",
   description:
-    "Clean minimal landing page template built with Next.js and Tailwind CSS.",
+    "Deploy AI Agents that plan, act through your tools, and report back to you without the need for you to do the work.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

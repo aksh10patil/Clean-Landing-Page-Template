@@ -5,6 +5,7 @@ import { FeaturesThird } from "@/components/ui/features-third";
 import { Hero } from "@/components/ui/hero";
 import { LogoCloud } from "@/components/ui/logo-cloud";
 import { Speed } from "@/components/ui/speed";
+import { Footer } from "@/components/ui/footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <FeaturesSecoundary />
       <FeaturesThird />
       <Pricing />
+      <Footer />
     </div>
   );
 }
