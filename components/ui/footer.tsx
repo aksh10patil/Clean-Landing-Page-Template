@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { Logo } from './logo';
@@ -148,7 +150,7 @@ export const Footer = () => {
                 {/* Bottom sub-footer */}
                 <div className="mt-14 pt-8 border-t border-neutral-200/70 dark:border-neutral-800/70 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <p className="text-xs text-neutral-500 dark:text-neutral-400 font-sans">
-                        &copy; {new Date().getFullYear()} Agenforce, Inc. All rights reserved.
+                        &copy; 2026 Agenforce, Inc. All rights reserved.
                     </p>
 
                     <div className="flex items-center gap-4">
