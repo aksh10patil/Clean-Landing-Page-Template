@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: "/agentforce",
+  basePath: "/agenforce",
   /* config options here */
   devIndicators: false,
   cacheComponents: true,
